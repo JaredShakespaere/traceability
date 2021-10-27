@@ -13,7 +13,7 @@ const app = express()
 // app.use(express.json())
 
 
-app.get('/', (req, res) => {
+app.get('/error', (req, res) => {
     try {
         nonExistentFunction();
     } catch (error) {
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     }
 })
 
-app.get('/error', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'))
     rollbar.info('html file served successfully')
 })
