@@ -13,7 +13,7 @@ const app = express()
 // app.use(express.json())
 
 
-app.get('/error', (req, res) => {
+app.get('/', (req, res) => {
     try {
         nonExistentFunction();
     } catch (error) {
