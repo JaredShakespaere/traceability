@@ -47,7 +47,7 @@ app.post('/api/student', (req, res) => {
         rollbar.warning('Potential bad name choice')
         res.status(400).send('Student may have bad parents')
     } else if(name.startsWith('S' || 's')){
-        rollbar.critical('Student is too hot')
+        rollbar.critical('Student is too hot to handle!')
         res.status(400).send('Call the fire department!')
     }
 
