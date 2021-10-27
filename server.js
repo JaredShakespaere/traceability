@@ -41,6 +41,14 @@ app.post('/api/student', (req, res) => {
     } else {
         rollbar.critical('student already exists')
         res.status(400).send('Student already exists')
+    };
+
+    if(name.startsWith('B' || 'b')){
+        rollbar.warning('Potential bad name choice')
+        res.status(400).send('Student may have bad parents')
+    } else if(name.startsWith('S' || 's')){
+        rollbar.critical('Student is too hot')
+        res.status(400).send('Call the fire department!')
     }
 
 })
