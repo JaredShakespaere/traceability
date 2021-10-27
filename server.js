@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully')
 })
 
-app.post('/', (req, res) => {
+app.get('/test', (req, res) => {
     try {
         nonExistentFunction();
     } catch (error) {
